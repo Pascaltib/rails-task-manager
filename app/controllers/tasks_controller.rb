@@ -27,7 +27,6 @@ class TasksController < ApplicationController
     redirect_to task_path(@task)
   end
 
-
   def updatecomp
     @task.completed = !@task.completed
     @task.save
