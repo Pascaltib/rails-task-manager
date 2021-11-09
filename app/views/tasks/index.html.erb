@@ -14,6 +14,10 @@
         "#{task.title}"
         end
       %>
+      <%= link_to delete_task_path(task), method: :delete, data: {confirm: "Are you sure?"} do %>
+        <i class="bi bi-trash"></i>
+
+      <%end%>
       </div>
       <div class="col-6">
       <%= link_to edit_task_path(task) do
