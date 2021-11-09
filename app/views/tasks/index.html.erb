@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="">My Tasks</h1>
+  <div class="row flex-row mt-3 h3">
+    <% @tasks.each do |task| %>
+      <div class="form-check col-1">
+        <% if task.completed%>
+          <a href="<%= updatecomp_task_path(task)%>"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked style="width: 20px; height: 20px;"></a>
+        <% else %>
+          <a href="<%= updatecomp_task_path(task)%>"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="width: 20px; height: 20px;"></a>
+        <% end %>
+      </div>
+      <div class="col-5">
+      <%= link_to task_path(task) do
+        "#{task.title}"
+        end
+      %>
+      </div>
+      <div class="col-6">
+      <%= link_to edit_task_path(task) do
+        "Edit this task"
+        end
+      %>
+      </div>
+    <% end %>
+  </div>
+  <a href="<%= tasks_new_path%>"><button class="btn btn-lg btn-primary mt-4">Add a new task!</button></a>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="mb-4"><%= @task.title %></h1>
+  <p>
+    <%=@task.details %>
+  </p>
+  <p>
+  This task is <%= @task.completed ? "completed." : "not completed." %>
+  </p>
+  <div class="row">
+  <a class= "col-1" href="<%= tasks_path%>">Go back</a>
+  <a class= "col-3" href="<%= edit_task_path(@task)%>">Edit this task</a>
+  </div>
+</div>
